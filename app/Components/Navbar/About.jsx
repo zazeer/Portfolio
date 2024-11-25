@@ -1,5 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import { MuseoModerno } from '@next/font/google';
+
+const museoModerno = MuseoModerno({
+  subsets: ['latin'],
+  weight: ['400', '700'], 
+});
 
 function About() {
   return (
@@ -15,6 +21,8 @@ function About() {
             className="rounded-full shadow-[0_0_20px_10px_rgba(240,171,252,0.8)] animate-glowing-shadow" 
             />
         </div>
+
+
       </div>
     
       <div className='md:w-1/2 w-full z-20 flex flex-col'>
