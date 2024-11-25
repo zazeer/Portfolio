@@ -45,6 +45,53 @@ body {
   cursor: none;
 }
 
-.Museo{
-  font-family: var(--font-Museo);
+.glow-overlay {
+  --glow-size: 18rem;
+  position: absolute;
+  opacity: var(--glow-opacity, 0);
+  mask: radial-gradient(
+    var(--glow-size) var(--glow-size) at var(--glow-x) var(--glow-y),
+    var(--glow-color) 1%,
+    transparent 50%
+  );
+  background: radial-gradient(
+    circle at var(--glow-x) var(--glow-y),
+    var(--glow-color) 1%,
+    transparent 100%
+  );
+  transition: 400ms mask ease;
+  will-change: mask;
+}
+
+/* .glow-overlay {
+  --glow-size: 25rem;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--glow-opacity, 0);
+  mask: radial-gradient(
+    var(--glow-size) var(--glow-size) at var(--glow-x) var(--glow-y),
+    var(--glow-color) 1%,
+    transparent 50%
+  );
+  background: radial-gradient(
+    circle at var(--glow-x) var(--glow-y),
+    var(--glow-color) 1%,
+    transparent 50%
+  );
+  transition: 400ms mask ease;
+  will-change: mask;
+} */
+
+
+@keyframes glowing-shadow {
+  0% {
+    box-shadow: 0 0 20px 10px rgba(240, 171, 252 ,0.8);
+  }
+
+}
+
+.animate-glowing-shadow {
+  animation: glowing-shadow 3s infinite ease-in-out;
 }

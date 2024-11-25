@@ -8,14 +8,14 @@ function Navbar(){
     return(
         <div>
             <nav className="w-full  fixed top-0 left-0 right-0  shadow-lg shadow-[#2A0E61]/50 bg-[#03001217] backdrop-blur-md z-50">
-                <div className="justify-between px-4 mx-auto lg:-mx-w-7xl md:items-center md:flex md:px-8">
+                <div className="justify-between px-4 mx-auto md:-mx-w-7xl md:items-center md:flex md:px-8 text-white">
                     <div>
-                        <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                            {/* LOGO */}
+                        <div className="flex items-center justify-between py-3 md:py-5">
+                            {/* Logo */}
                             <Link href="#home">
                                 <Image src="/images/rtz logo white.png" alt="RTZ Logo" width={85} height={90}/>
                             </Link>
-                            {/* HAMBURGER BUTTON FOR MOBILE */}
+                            {/* Hamburger Button*/}
                             <div className="md:hidden">
                                 <button
                                     className="p-4"
@@ -56,15 +56,6 @@ function Navbar(){
                             <li className="pb-1 text-xl py-100 md:px-6 text-center">
                                 <Link className="hover:bg-purple-400 hover:text-transparent hover:bg-clip-text relative group"  href="#projects" onClick={() => setNavbar(!navbar)}>
                                     Projects
-                                    <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 rounded-r-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                    <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 rounded-l-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                </Link>
-                            </li>
-
-                            {/* contact */}
-                            <li className="pb-1 text-xl py-100 md:px-6 text-center">
-                                <Link className="hover:bg-purple-400 hover:text-transparent hover:bg-clip-text relative group"  href="#contact" onClick={() => setNavbar(!navbar)}>
-                                    Contact
                                     <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 rounded-r-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
                                     <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 rounded-l-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
                                 </Link>
