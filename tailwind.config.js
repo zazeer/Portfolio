@@ -66,18 +66,4 @@ export const plugins = [
       },
     });
   }),
-  // plugin(
-  //   function ({ addVariant }) {
-  //     addVariant("glow", ".glow-capture .glow-overlay &");
-  //   },
-  //   {
-  //     theme: {
-  //       extend: {
-  //         colors: {
-  //           glow: "color-mix(in srgb, var(--glow-color) calc(<alpha-value> * 10%), transparent)",
-  //         },
-  //       },
-  //     },
-  //   }
-  // ),
-];
+ 

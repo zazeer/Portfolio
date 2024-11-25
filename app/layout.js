@@ -1,13 +1,6 @@
-import { Metadata } from "next";
 import "./globals.css";
-import { MuseoModerno, Poppins } from 'next/font/google';
 import StarCanvas from "./Components/Navbar/StarBg";
 
-const museoModerno_init = MuseoModerno({
-  variable: "--font-Museo",
-  weight: ['100', '300', '700', '900'], 
-  subsets: ["latin"],
-});
 
 const poppins_init = Poppins({
   variable: "--font-poppins",
@@ -24,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${museoModerno_init.className} ${poppins_init.className} antialiased`}>
+      <body className={`${poppins_init.className} antialiased`}>
         <StarCanvas/>
         {children}
       </body>

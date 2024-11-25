@@ -1,20 +1,14 @@
 "use client";
-import { useState } from 'react';
 import React from 'react'
-import Image from "next/image";
 import Head from "next/head"; 
 import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
-import { Bars3Icon } from '@heroicons/react/24/solid';
-import { useEffect } from "react";
 import Typewriter from 'typewriter-effect';
 import Rnavbar from './Components/Navbar/Navbar';
-import Cursor from './Components/Cursor/Cursor';
 import Video from './Components/Navbar/Video';
 import About from './Components/Navbar/About';
 import Project from './Components/Navbar/Projects';
 import Link from 'next/link';
 import { MuseoModerno } from 'next/font/google';
-import motion from 'framer-motion';
 
 const museoModerno = MuseoModerno({
   subsets: ['latin'],
@@ -112,9 +106,6 @@ export default function Home() {
                   </span>
                 </div>
 
-                {/* <div className='absolute bottom-5 w-full flex justify-center pr-14'>
-                    <span className='text-xl italic font-extralight'>"The more we learn about the universe, the more we realize how much we still have to learn"</span>
-                  </div> */}
               </div>
             </div>
           </div>

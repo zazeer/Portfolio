@@ -1,11 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { MuseoModerno } from '@next/font/google';
-
-const museoModerno = MuseoModerno({
-  subsets: ['latin'],
-  weight: ['400', '700'], 
-});
 
 function About() {
   return (
@@ -32,7 +26,7 @@ function About() {
               Hi! I’m <span className='text-fuchsia-300'>Reza</span>, a Computer Science student from BINUS University with a strong passion for <span className='text-fuchsia-300'>web and application development</span>. Through the lessons I’ve learned and the projects I’ve worked on, I have a solid foundation in coding and problem-solving. 
               <br />
               <br />
-              I thrive in <span className='text-fuchsia-300'>collaborative environments</span> and value the power of effective communication in achieving project success. I'm eager to leverage my skills and knowledge to contribute to innovative projects and continue my professional growth in the field of web and application development
+              I thrive in <span className='text-fuchsia-300'>collaborative environments</span> and value the power of effective communication in achieving project success. I&apos;m eager to leverage my skills and knowledge to contribute to innovative projects and continue my professional growth in the field of web and application development
             </p>
         </div>
         <div className='md:h-1/2 md:mt-0 md:mb-0 mt-10 mb-10 text-justify'>
