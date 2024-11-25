@@ -47,6 +47,7 @@ export const theme = {
     },
   },
 };
+
 export const plugins = [
   require("@iconify/tailwind"),
   require("tailwind-scrollbar-hide"),
@@ -66,4 +67,4 @@ export const plugins = [
       },
     });
   }),
- 
+]

@@ -1,6 +1,6 @@
 import "./globals.css";
 import StarCanvas from "./Components/Navbar/StarBg";
-
+import { Poppins } from "next/font/google";
 
 const poppins_init = Poppins({
   variable: "--font-poppins",
