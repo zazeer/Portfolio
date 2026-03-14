@@ -6,6 +6,7 @@ import Typewriter from 'typewriter-effect';
 import Rnavbar from './Components/Navbar/Navbar';
 import Video from './Components/Navbar/Video';
 import About from './Components/Navbar/About';
+import TechStack from './Components/Navbar/Skills';
 import Project from './Components/Navbar/Projects';
 import Link from 'next/link';
 import { MuseoModerno } from 'next/font/google';
@@ -46,7 +47,7 @@ export default function Home() {
                 <h2 className="md:text-8xl text-2xl mt-2 pb-6 font-bold bg-gradient-to-r from-violet-700 via-purple-400 to-fuchsia-300 text-transparent bg-clip-text bg-300% animate-gradient">
                   <Typewriter
                     options={{
-                      strings: ["Web Developer", "Application Developer"],
+                      strings: ["AI Engineer", "Application Developer"],
                       autoStart: true,
                       loop: true,
                     }}
@@ -114,6 +115,11 @@ export default function Home() {
         {/* About*/}
         <section id="about">
           <About />
+        </section>
+
+        {/* Skills */}
+        <section id="skills">
+          <TechStack />
         </section>
 
         {/* Projects*/}
