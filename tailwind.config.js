@@ -13,9 +13,26 @@ export const theme = {
     animation: {
       orbit: "orbit 6s linear infinite",
       gradient: "animatedgradient 10s ease infinite alternate",
+      "spin-slow": "spin 20s linear infinite",
+      "spin-slow-reverse": "spin 20s linear infinite reverse",
+      "spin-slower": "spin 25s linear infinite",
+      "spin-slower-reverse": "spin 25s linear infinite reverse",
+      "spin-slowest": "spin 35s linear infinite",
+      "spin-slowest-reverse": "spin 35s linear infinite reverse",
+      "sun-glow": "sun-pulse 4s ease-in-out infinite",
     },
 
     keyframes: {
+      "sun-pulse": {
+        "0%, 100%": {
+          transform: "scale(1)",
+          boxShadow: "0 0 60px 15px rgba(245, 158, 11, 0.5)",
+        },
+        "50%": {
+          transform: "scale(1.05)",
+          boxShadow: "0 0 90px 25px rgba(245, 158, 11, 0.7)",
+        },
+      },
       animatedgradient: {
         "0%": {
           backgroundPosition: "0% 50%",
