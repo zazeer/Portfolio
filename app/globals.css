@@ -116,3 +116,20 @@ body {
   background-size: auto, 300% 100%;
   animation: gradient-border-anim 8s linear infinite;
 }
+
+.success-toast-wrap {
+  border-radius: 0.75rem;
+  border: 1.5px solid transparent;
+  background-image:
+    linear-gradient(rgba(9, 9, 11, 0.95), rgba(9, 9, 11, 0.95)),
+    linear-gradient(90deg, #10b981, #34d399, #6ee7b7, #10b981);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  background-size: auto, 200% 100%;
+  animation: success-gradient-anim 4s linear infinite;
+}
+
+@keyframes success-gradient-anim {
+  0%   { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 200% 50%; }
+}
