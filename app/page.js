@@ -1,7 +1,6 @@
 "use client";
 import React from 'react'
 import Head from "next/head"; 
-import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Typewriter from 'typewriter-effect';
 import Rnavbar from './Components/Navbar/Navbar';
 import Video from './Components/Navbar/Video';

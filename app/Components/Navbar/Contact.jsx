@@ -6,12 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import Link from 'next/link';
 import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
-import { MuseoModerno } from 'next/font/google';
 
-const museoModerno = MuseoModerno({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-});
 
 const formSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100, 'Name must be 100 characters or less'),
