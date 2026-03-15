@@ -46,7 +46,7 @@ const Contact = () => {
 
         setTimeout(() => {
           setSubmitStatus(null);
-        }, 5000);
+        }, 10000);
       } else {
         setSubmitStatus('error');
       }
@@ -64,11 +64,8 @@ const Contact = () => {
     const overlay = capture.querySelector(".glow-overlay-contact");
     if (!overlay) return;
 
-    // Clear previous clones to prevent "stuck" or "ghost" glows
     overlay.innerHTML = "";
 
-    // Clone the form container (which is now the second child of capture)
-    // capture.children[0] is the overlay, capture.children[1] is the form container
     const formToClone = capture.children[1];
     if (!formToClone) return;
 
@@ -132,7 +129,7 @@ const Contact = () => {
               I&apos;m always open to connecting, discussing new opportunities, or collaborating on interesting ideas and projects.
             </p>
 
-            {/* Social Links (Desktop Only) */}
+            {/* Social Links */}
             <div className="mt-12 hidden lg:flex flex-col gap-5">
               <h4 className="font-semibold text-white/90 uppercase tracking-widest text-sm opacity-80">Connect On Socials</h4>
               <div className="flex gap-6">
@@ -157,7 +154,6 @@ const Contact = () => {
 
           {/* Right Column - Form */}
           <div className="w-full lg:w-7/12 mt-10 lg:mt-0 relative">
-            {/* Dedicated wrapper for glow-capture to ensure the effect is contained ONLY to the form box */}
             <div className="relative glow-capture-contact rounded-3xl overflow-hidden">
               {/* Glow Overlay Effect */}
               <div
@@ -233,30 +229,17 @@ const Contact = () => {
                 <div className="mt-4 flex justify-center w-full">
                   <motion.button
                     type="submit"
-                    disabled={!isValid || isSubmitting || submitStatus === 'success'}
+                    disabled={isSubmitting}
                     layout
                     transition={{ duration: 0.3 }}
-                    className={`backdrop-blur-xl rounded-xl font-bold text-lg transition-all flex justify-center items-center shadow-lg relative overflow-hidden w-full
-                      ${(submitStatus === 'success' || isSubmitting) ? 'w-16 h-16 rounded-full p-0' : 'py-4 px-6'}
-                      ${isValid && !isSubmitting && submitStatus !== 'success'
+                    className={`backdrop-blur-xl rounded-xl font-bold text-lg transition-all flex justify-center items-center shadow-lg relative overflow-hidden w-full py-4 px-6
+                      ${isValid && !isSubmitting
                         ? 'bg-gradient-to-r from-violet-700 via-fuchsia-500 to-purple-400 animate-gradient bg-[length:300%_auto] text-white shadow-[0_0_25px_rgba(217,70,239,0.4)]'
                         : 'bg-zinc-900/50 border border-zinc-700/50 text-zinc-500 cursor-not-allowed opacity-80'
-                      }
-                      ${submitStatus === 'success' ? 'bg-emerald-500/30 border border-emerald-400 text-emerald-400' : ''}`}
+                      }`}
                   >
                     {isSubmitting ? (
                       <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    ) : submitStatus === 'success' ? (
-                      <motion.svg
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        className="w-8 h-8 text-emerald-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </motion.svg>
                     ) : (
                       <motion.span layout="position">Send Message</motion.span>
                     )}
@@ -264,7 +247,7 @@ const Contact = () => {
                 </div>
               </form>
 
-              {/* Toast Messages */}
+              {/* Error Toast */}
               {submitStatus === 'error' && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -276,10 +259,80 @@ const Contact = () => {
                   Oops! Something went wrong. Please try again later.
                 </motion.div>
               )}
+
+              {/* Success Toast */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="mt-6 success-toast-wrap shadow-lg shadow-emerald-500/10 z-20"
+                >
+                  {/* Sparkles */}
+                  <div className="absolute top-3 right-4 text-emerald-300 text-xs animate-bounce" style={{ animationDelay: '0s' }}>✦</div>
+                  <div className="absolute top-5 right-10 text-emerald-400 text-[9px] animate-bounce" style={{ animationDelay: '0.3s' }}>✦</div>
+                  <div className="absolute bottom-4 right-5 text-emerald-300 text-[9px] animate-bounce" style={{ animationDelay: '0.6s' }}>✦</div>
+
+                  <div className="flex items-start gap-4 p-5">
+                    {/* Checkmark */}
+                    <div className="relative flex-shrink-0">
+                      <div className="absolute inset-0 rounded-full bg-emerald-400/25 animate-ping" />
+                      <div className="relative w-11 h-11 rounded-full bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center shadow-[0_0_16px_rgba(52,211,153,0.5)]">
+                        <motion.svg
+                          className="w-6 h-6"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth={3}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <motion.path
+                            d="M5 13l4 4L19 7"
+                            initial={{ pathLength: 0 }}
+                            animate={{ pathLength: 1 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                          />
+                        </motion.svg>
+                      </div>
+                    </div>
+
+                    {/* Text */}
+                    <div className="flex-1 min-w-0">
+                      <motion.p
+                        initial={{ opacity: 0, x: 8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="font-bold text-emerald-300 text-sm"
+                      >
+                        Message Sent! 🎉
+                      </motion.p>
+                      <motion.p
+                        initial={{ opacity: 0, x: 8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="mt-1 text-xs text-zinc-400 leading-relaxed"
+                      >
+                        Thanks for reaching out — I&apos;ll get back to you as soon as possible!
+                      </motion.p>
+
+                      {/* Countdown bar */}
+                      <div className="mt-3 h-[3px] w-full bg-zinc-700/60 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: '100%' }}
+                          animate={{ width: '0%' }}
+                          transition={{ duration: 8, ease: 'linear' }}
+                          className="h-full bg-gradient-to-r from-emerald-400 to-green-400 rounded-full"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
             </div>
           </div>
 
-            {/* Social Links (Mobile Only) */}
+            {/* Social Links (Mobile) */}
             <div className="mt-16 flex lg:hidden flex-col items-center gap-5">
               <h4 className="font-semibold text-white/90 uppercase tracking-widest text-sm opacity-80">Connect On Socials</h4>
               <div className="flex gap-6">
