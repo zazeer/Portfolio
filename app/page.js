@@ -8,6 +8,7 @@ import Video from './Components/Navbar/Video';
 import About from './Components/Navbar/About';
 import TechStack from './Components/Navbar/Skills';
 import Project from './Components/Navbar/Projects';
+import Contact from './Components/Navbar/Contact';
 import Link from 'next/link';
 import { MuseoModerno } from 'next/font/google';
 
@@ -54,11 +55,11 @@ export default function Home() {
                   />
                 </h2>
 
-                {/* CV button */}
-                <div className="mb-6 flex flex-row">
+                {/* Action Buttons */}
+                <div className="mt-10 mb-6 flex flex-col md:flex-row gap-4 md:gap-0 items-center md:items-start">
                   <a
                     href="#projects"
-                    className="relative inline-flex items-center justify-center px-6 py-3 md:px-12 md:py-5 md:mr-5 mr-3 font-bold text-white rounded-md shadow-2xl group"
+                    className="relative inline-flex items-center justify-center px-6 py-3 md:px-12 md:py-5 md:mr-5 font-bold text-white rounded-md shadow-2xl group w-fit md:w-auto"
                   >
                     <span className="absolute inset-0 w-full h-full transition rounded-md duration-100 ease-out opacity-0 bg-gradient-to-r from-sky-500 via-blue-500 to-green-400 bg-300% animate-gradient group-hover:opacity-100"></span>
                     <span className="absolute top-0 left-0 w-full bg-gradient-to-b from-white to-transparent opacity-5 h-1/3"></span>
@@ -71,9 +72,9 @@ export default function Home() {
                       Discover my work
                     </span>
                   </a>
-                  <div>
+                  <div className="w-fit md:w-auto">
                     <Link href="https://drive.google.com/file/d/18wiIvVTIAdk8NKIQVjsGMIa18BRCItnd/view?usp=drive_link">
-                      <button className="relative inline-flex items-end justify-end px-4 py-3 md:px-9 md:py-5 font-bold text-white rounded-md shadow-2xl bg-gradient-to-r from-sky-500 via-blue-500 to-[#06b6d4] bg-300% animate-gradient">
+                      <button className="relative inline-flex items-center justify-center px-8 py-3 md:px-9 md:py-5 font-bold text-white rounded-md shadow-2xl bg-gradient-to-r from-sky-500 via-blue-500 to-[#06b6d4] bg-300% animate-gradient-fast w-full">
                         <span className="absolute top-0 left-0 w-full bg-gradient-to-b from-white to-transparent opacity-5 h-1/3"></span>
                         <span className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-white to-transparent opacity-5"></span>
                         <span className="absolute bottom-0 left-0 w-4 h-full bg-gradient-to-r from-white to-transparent opacity-5"></span>
@@ -86,25 +87,6 @@ export default function Home() {
                       </button>
                     </Link>
                   </div>
-                </div>
-
-                {/* media social */}
-                <div className="md:mt-10 md:text-6xl md:space-x-10 text-3xl space-x-3 flex ">
-                  <span className="transform hover:text-gradient transition duration-500 hover:scale-125 hover:text-purple-400 flex justify-center items-center">
-                    <Link href="https://instagram.com/reza.tafaz">
-                      <AiFillInstagram />
-                    </Link>
-                  </span>
-                  <span className="transform hover:text-gradient transition duration-500 hover:scale-125 hover:text-purple-400 flex justify-center items-center">
-                    <Link href="https://linkedin.com/in/reza-tafazzul">
-                      <AiFillLinkedin />
-                    </Link>
-                  </span>
-                  <span className="transform hover:text-gradient transition duration-500 hover:scale-125 hover:text-purple-400 flex justify-center items-center">
-                    <Link href="https://github.com/zazeer">
-                      <AiFillGithub />
-                    </Link>
-                  </span>
                 </div>
 
               </div>
@@ -125,6 +107,11 @@ export default function Home() {
         {/* Projects*/}
         <section id="projects">
           <Project />
+        </section>
+
+        {/* Contact */}
+        <section id="contact">
+          <Contact />
         </section>
       </main>
     </div>
