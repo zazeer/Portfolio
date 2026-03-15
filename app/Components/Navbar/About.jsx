@@ -5,15 +5,28 @@ function About() {
   return (
     <div className="bg-[#030014] min-h-screen text-white flex flex-wrap">
       <div className='md:w-1/2 w-full z-30 mt-auto md:min-h-screen h-auto flex justify-center items-center'>
-        <div className="w-[15rem] h-[15rem] md:w-[28rem] md:h-[28rem]">
-          <Image
-            src="/images/Reza Photo.png"
-            layout='intrinsic'
-            width={500}
-            height={500}
-            alt="Reza Photo"
-            className="rounded-full shadow-[0_0_20px_10px_rgba(240,171,252,0.8)] animate-glowing-shadow"
-          />
+        <div className="relative w-[16rem] h-[16rem] md:w-[28rem] md:h-[28rem] flex justify-center items-center group mt-10 md:mt-0">
+          {/* Corner Brackets */}
+          <div className="absolute top-0 left-0 w-8 h-8 md:w-16 md:h-16 border-t-[3px] border-l-[3px] md:border-t-4 md:border-l-4 border-fuchsia-500 rounded-tl-xl transition-all duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:border-indigo-400 shadow-[-5px_-5px_15px_rgba(217,70,239,0.3)]"></div>
+          <div className="absolute top-0 right-0 w-8 h-8 md:w-16 md:h-16 border-t-[3px] border-r-[3px] md:border-t-4 md:border-r-4 border-fuchsia-500 rounded-tr-xl transition-all duration-500 group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:border-indigo-400 shadow-[5px_-5px_15px_rgba(217,70,239,0.3)]"></div>
+          <div className="absolute bottom-0 left-0 w-8 h-8 md:w-16 md:h-16 border-b-[3px] border-l-[3px] md:border-b-4 md:border-l-4 border-fuchsia-500 rounded-bl-xl transition-all duration-500 group-hover:-translate-x-2 group-hover:translate-y-2 group-hover:border-indigo-400 shadow-[-5px_5px_15px_rgba(217,70,239,0.3)]"></div>
+          <div className="absolute bottom-0 right-0 w-8 h-8 md:w-16 md:h-16 border-b-[3px] border-r-[3px] md:border-b-4 md:border-r-4 border-fuchsia-500 rounded-br-xl transition-all duration-500 group-hover:translate-x-2 group-hover:translate-y-2 group-hover:border-indigo-400 shadow-[5px_5px_15px_rgba(217,70,239,0.3)]"></div>
+
+          <div className="relative w-[88%] h-[88%] overflow-hidden rounded-full shadow-[0_0_40px_rgba(217,70,239,0.15)] bg-[#030014] border border-white/10 group-hover:border-indigo-400/50 transition-colors duration-500">
+            {/* Radar Ring */}
+            <div className="absolute inset-0 m-2 md:m-3 border-[2px] border-dashed border-fuchsia-400/40 rounded-full group-[&]:animate-[spin_40s_linear_infinite] group-hover:animate-[spin_15s_linear_infinite] z-20 pointer-events-none group-hover:border-indigo-400/60 transition-all duration-500"></div>
+
+            <Image
+              src="/images/Reza Photo.png"
+              layout='fill'
+              objectFit="cover"
+              alt="Reza Photo"
+              className="z-0 object-center grayscale-[20%] hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-110"
+            />
+
+            {/* Soft neon overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 to-indigo-500/10 z-10 pointer-events-none mix-blend-overlay"></div>
+          </div>
         </div>
 
 
