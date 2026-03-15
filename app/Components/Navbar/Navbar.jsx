@@ -69,6 +69,15 @@ function Navbar() {
                                     <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 rounded-l-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
                                 </Link>
                             </li>
+
+                            {/* Contact */}
+                            <li className="pb-1 text-xl py-100 md:px-6 text-center">
+                                <Link className="hover:bg-purple-400 hover:text-transparent hover:bg-clip-text relative group" href="#contact" onClick={() => setNavbar(!navbar)}>
+                                    Contact
+                                    <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 rounded-r-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
+                                    <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 rounded-l-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
