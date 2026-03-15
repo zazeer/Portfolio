@@ -33,7 +33,7 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
     try {
-      const response = await fetch(process.env.FORMSPREE_API, {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_API, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
