@@ -1,15 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 function Skills() {
     return (
         <div className="bg-[#030014] min-h-screen text-white flex flex-wrap items-center overflow-hidden">
-            {/* Text */}
-            <div className="md:w-1/2 w-full z-20 flex flex-col justify-center px-6 sm:px-12 md:pl-20 pt-24 md:pt-0 items-center md:items-start text-center md:text-left">
+            <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="md:w-1/2 w-full z-20 flex flex-col justify-center px-6 sm:px-12 md:pl-20 pt-24 md:pt-0 items-center md:items-start text-center md:text-left"
+            >
                 <h1 className="md:text-6xl text-4xl sm:text-5xl mb-4 sm:mb-6 font-bold bg-gradient-to-r from-fuchsia-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text bg-300% animate-gradient">What I do</h1>
                 <p className="md:text-xl text-base sm:text-lg text-gray-300 mb-8 sm:mb-10 w-full leading-relaxed">
                     I build full-stack web applications and work across both frontend and backend to create practical and scalable systems. I’m also interested in exploring different areas of software development.
-                    <br /><br />In addition, I work with AI systems such as retrieval-augmented generation (RAG), combining large language models and vector databases to develop more intelligent applications.
+                    <br /><br />In addition, I work with AI systems such as retrieval augmented generation (RAG), combining large language models and vector databases to develop more intelligent applications.
                 </p>
 
                 <h1 className="md:text-6xl text-4xl sm:text-5xl mb-4 sm:mb-6 font-bold bg-gradient-to-r from-fuchsia-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text bg-300% animate-gradient">Skills</h1>
@@ -17,7 +23,7 @@ function Skills() {
                     {[
                         "REST API Development",
                         "CI/CD & Containerization (Docker)",
-                        "Retrieval-Augmented Generation (RAG)",
+                        "Retrieval Augmented Generation (RAG)",
                         "Prompt Engineering",
                         "Vector Search",
                         "Database Design"
@@ -43,10 +49,16 @@ function Skills() {
                         </li>
                     ))}
                 </ul>
-            </div>
+            </motion.div>
 
             {/* Tech Stack */}
-            <div className="md:w-1/2 w-full z-30 flex justify-center items-center h-[60vh] md:min-h-screen">
+            <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="md:w-1/2 w-full z-30 flex justify-center items-center h-[60vh] md:min-h-screen"
+            >
                 <div className="relative flex items-center justify-center scale-50 sm:scale-75 md:scale-90 lg:scale-100 mt-10 md:mt-0">
 
                     {/* Central*/}
@@ -83,9 +95,11 @@ function Skills() {
                             </li>
                             {/* Qdrant */}
                             <li className="absolute top-0 left-1/2 h-1/2 -ml-[1.5rem] origin-bottom rotate-[270deg]">
-                                <div className="relative -top-[1.5rem] w-[3rem] h-[3rem] -rotate-[270deg]">
-                                    <div className="w-full h-full bg-white border shadow-lg border-gray-200/20 rounded-xl flex items-center justify-center animate-spin-slow">
-                                        <Image className="m-auto hover:scale-125 transition-transform duration-300" width={32} height={32} alt="Qdrant" src="/images/qdrant_logo.svg" />
+                                <div className="relative -top-[2rem] h-1/2 w-4 origin-bottom rotate-0"> {/* Adjusted container to match other items */}
+                                    <div className="relative -top-[1.5rem] w-[3rem] h-[3rem] -rotate-[270deg]">
+                                        <div className="w-full h-full bg-white border shadow-lg border-gray-200/20 rounded-xl flex items-center justify-center animate-spin-slow">
+                                            <Image className="m-auto hover:scale-125 transition-transform duration-300" width={32} height={32} alt="Qdrant" src="/images/qdrant_logo.svg" />
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -153,7 +167,7 @@ function Skills() {
                     </div>
 
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }
