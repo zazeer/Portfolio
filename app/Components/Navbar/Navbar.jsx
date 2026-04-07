@@ -1,81 +1,82 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { useState } from 'react'
-import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
+"use client";
+import Link from 'next/link';
+import { useState } from 'react';
+import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Navbar() {
     const [navbar, setNavbar] = useState(false);
+
+    const navLinks = [
+        { name: 'Home', href: '#home' },
+        { name: 'About', href: '#about' },
+        { name: 'Skills', href: '#skills' },
+        { name: 'Projects', href: '#projects' },
+        { name: 'Contact', href: '#contact' }
+    ];
+
     return (
-        <div>
-            <nav className="w-full  fixed top-0 left-0 right-0  shadow-lg shadow-[#2A0E61]/50 bg-[#03001217] backdrop-blur-md z-50">
-                <div className="justify-between px-4 mx-auto md:-mx-w-7xl md:items-center md:flex md:px-8 text-white">
-                    <div>
-                        <div className="flex items-center justify-between py-3 md:py-5">
-                            {/* Logo */}
-                            <Link href="#home">
-                                <Image src="/images/rtz logo white.png" alt="RTZ Logo" width={85} height={90} />
+        <nav
+            className="w-full fixed top-0 left-0 right-0 z-[100] bg-[#03001217] backdrop-blur-md shadow-lg shadow-[#2A0E61]/50 py-5 md:py-5 transition-all duration-300"
+        >
+            {/* Desktop Center Menu */}
+            <div className="hidden md:flex justify-center items-center px-4 mx-auto w-full">
+                <ul className="flex items-center gap-12 lg:gap-16">
+                    {navLinks.map((link) => (
+                        <li key={link.name}>
+                            <Link 
+                                className="inline-block text-[17px] font-medium text-zinc-300 hover:text-white transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:scale-110 py-2 tracking-wide" 
+                                href={link.href}
+                            >
+                                {link.name}
                             </Link>
-                            {/* Hamburger Button*/}
-                            <div className="md:hidden">
-                                <button
-                                    className="p-4"
-                                    onClick={() => setNavbar(!navbar)}
-                                >
-                                    {navbar ? (
-                                        <XMarkIcon className="w-8 h-8 text-white" />
-                                    ) : (
-                                        <Bars3Icon className="w-8 h-8 text-white focus:border-none active:border-none" />
-                                    )}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
 
-                    {/* Section */}
-                    <div className={`flex-auto justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? 'p-12 md:p-0 block' : 'hidden'}`}>
-                        <ul className="h-screen md:h-auto items-end justify-end md:flex">
-                            {/* Home */}
-                            <li className="pb-1 text-xl py-100 md:px-6 text-center">
-                                <Link className="hover:bg-purple-400 hover:text-transparent hover:bg-clip-text relative group" href="#home" onClick={() => setNavbar(!navbar)}>
-                                    Home
-                                    <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 rounded-r-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                    <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 rounded-l-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                </Link>
-                            </li>
+            {/* Mobile Hamburger Layout */}
+            <div className="flex md:hidden items-center justify-end px-6">
+                <button
+                    className="p-2 text-zinc-300 hover:text-white transition-colors rounded-lg hover:bg-white/5 focus:outline-none"
+                    onClick={() => setNavbar(!navbar)}
+                    aria-label="Toggle Navigation"
+                >
+                    {navbar ? (
+                        <XMarkIcon className="w-8 h-8" />
+                    ) : (
+                        <Bars3Icon className="w-8 h-8" />
+                    )}
+                </button>
+            </div>
 
-                            {/* about */}
-                            <li className="pb-1 text-xl py-100 md:px-6 text-center">
-                                <Link className="hover:bg-purple-400 hover:text-transparent hover:bg-clip-text relative group" href="#about" onClick={() => setNavbar(!navbar)}>
-                                    About
-                                    <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 rounded-r-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                    <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 rounded-l-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                </Link>
-                            </li>
-
-                            {/* Skills */}
-                            <li className="pb-1 text-xl py-100 md:px-6 text-center">
-                                <Link className="hover:bg-purple-400 hover:text-transparent hover:bg-clip-text relative group" href="#skills" onClick={() => setNavbar(!navbar)}>
-                                    Skills
-                                    <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 rounded-r-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                    <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 rounded-l-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                </Link>
-                            </li>
-
-                            {/* projects */}
-                            <li className="pb-1 text-xl py-100 md:px-6 text-center">
-                                <Link className="hover:bg-purple-400 hover:text-transparent hover:bg-clip-text relative group" href="#projects" onClick={() => setNavbar(!navbar)}>
-                                    Projects
-                                    <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 rounded-r-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                    <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 rounded-l-lg bg-purple-400 group-hover:w-1/2 group-hover:transition-all"></span>
-                                </Link>
-                            </li>
+            <AnimatePresence>
+                {navbar && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="md:hidden overflow-hidden bg-[#030014]/95 backdrop-blur-2xl border-b border-white/5 shadow-2xl absolute top-full left-0 w-full"
+                    >
+                        <ul className="flex flex-col items-center py-6 gap-6">
+                            {navLinks.map((link) => (
+                                <li key={link.name} className="w-full text-center">
+                                    <Link
+                                        className="text-lg font-semibold text-zinc-300 hover:text-fuchsia-400 hover:bg-white/5 block w-full py-3 transition-colors"
+                                        href={link.href}
+                                        onClick={() => setNavbar(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </nav>
     );
-
 }
 
 export default Navbar;

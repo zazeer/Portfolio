@@ -73,3 +73,63 @@ body {
 .animate-glowing-shadow {
   animation: glowing-shadow 3s infinite ease-in-out;
 }
+
+/* Gradient Border for Form Inputs */
+.form-input-wrap {
+  border-radius: 0.75rem;
+  border: 1.5px solid rgba(167, 139, 250, 0.25);
+  background: #0a0a0a;
+  transition: border-color 0.3s ease;
+}
+
+.form-input-wrap:focus-within {
+  border: 1.5px solid transparent;
+  background-image:
+    linear-gradient(#0a0a0a, #0a0a0a),
+    linear-gradient(90deg, #6d28d9, #d946ef, #a855f7, #6d28d9);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  background-size: auto, 300% 100%;
+  animation: gradient-border-anim 8s linear infinite;
+}
+
+.form-input-wrap.error {
+  border: 1.5px solid rgba(239, 68, 68, 0.7);
+  background: #0a0a0a;
+  animation: none;
+}
+
+@keyframes gradient-border-anim {
+  0%   { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 300% 50%; }
+}
+
+/* Moving gradient border for locked Send Message button */
+.button-border-wrap {
+  border-radius: 0.75rem;
+  padding: 2px;
+  background-image:
+    linear-gradient(#0a0a0a, #0a0a0a),
+    linear-gradient(90deg, #6d28d9, #d946ef, #a855f7, #6d28d9);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  background-size: auto, 300% 100%;
+  animation: gradient-border-anim 8s linear infinite;
+}
+
+.success-toast-wrap {
+  border-radius: 0.75rem;
+  border: 1.5px solid transparent;
+  background-image:
+    linear-gradient(rgba(9, 9, 11, 0.95), rgba(9, 9, 11, 0.95)),
+    linear-gradient(90deg, #10b981, #34d399, #6ee7b7, #10b981);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  background-size: auto, 200% 100%;
+  animation: success-gradient-anim 4s linear infinite;
+}
+
+@keyframes success-gradient-anim {
+  0%   { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 200% 50%; }
+}

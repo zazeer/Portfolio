@@ -1,13 +1,13 @@
 "use client";
 import React from 'react'
 import Head from "next/head"; 
-import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Typewriter from 'typewriter-effect';
 import Rnavbar from './Components/Navbar/Navbar';
 import Video from './Components/Navbar/Video';
 import About from './Components/Navbar/About';
 import TechStack from './Components/Navbar/Skills';
 import Project from './Components/Navbar/Projects';
+import Contact from './Components/Navbar/Contact';
 import Link from 'next/link';
 import { MuseoModerno } from 'next/font/google';
 
@@ -47,18 +47,18 @@ export default function Home() {
                 <h2 className="md:text-8xl text-2xl mt-2 pb-6 font-bold bg-gradient-to-r from-violet-700 via-purple-400 to-fuchsia-300 text-transparent bg-clip-text bg-300% animate-gradient">
                   <Typewriter
                     options={{
-                      strings: ["AI Engineer", "Application Developer"],
+                      strings: ["Application Developer"],
                       autoStart: true,
                       loop: true,
                     }}
                   />
                 </h2>
 
-                {/* CV button */}
-                <div className="mb-6 flex flex-row">
+                {/* Action Buttons */}
+                <div className="mt-10 mb-6 flex flex-col md:flex-row gap-4 md:gap-0 items-center md:items-start">
                   <a
                     href="#projects"
-                    className="relative inline-flex items-center justify-center px-6 py-3 md:px-12 md:py-5 md:mr-5 mr-3 font-bold text-white rounded-md shadow-2xl group"
+                    className="relative inline-flex items-center justify-center px-6 py-3 md:px-12 md:py-5 md:mr-5 font-bold text-white rounded-md shadow-2xl group w-fit md:w-auto"
                   >
                     <span className="absolute inset-0 w-full h-full transition rounded-md duration-100 ease-out opacity-0 bg-gradient-to-r from-sky-500 via-blue-500 to-green-400 bg-300% animate-gradient group-hover:opacity-100"></span>
                     <span className="absolute top-0 left-0 w-full bg-gradient-to-b from-white to-transparent opacity-5 h-1/3"></span>
@@ -88,25 +88,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* media social */}
-                <div className="md:mt-10 md:text-6xl md:space-x-10 text-3xl space-x-3 flex ">
-                  <span className="transform hover:text-gradient transition duration-500 hover:scale-125 hover:text-purple-400 flex justify-center items-center">
-                    <Link href="https://instagram.com/reza.tafaz">
-                      <AiFillInstagram />
-                    </Link>
-                  </span>
-                  <span className="transform hover:text-gradient transition duration-500 hover:scale-125 hover:text-purple-400 flex justify-center items-center">
-                    <Link href="https://linkedin.com/in/reza-tafazzul">
-                      <AiFillLinkedin />
-                    </Link>
-                  </span>
-                  <span className="transform hover:text-gradient transition duration-500 hover:scale-125 hover:text-purple-400 flex justify-center items-center">
-                    <Link href="https://github.com/zazeer">
-                      <AiFillGithub />
-                    </Link>
-                  </span>
-                </div>
-
               </div>
             </div>
           </div>
@@ -125,6 +106,11 @@ export default function Home() {
         {/* Projects*/}
         <section id="projects">
           <Project />
+        </section>
+
+        {/* Contact */}
+        <section id="contact">
+          <Contact />
         </section>
       </main>
     </div>
