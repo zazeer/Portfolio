@@ -72,7 +72,7 @@ export default function Home() {
                     </span>
                   </a>
                   <div>
-                    <Link href="https://drive.google.com/file/d/18wiIvVTIAdk8NKIQVjsGMIa18BRCItnd/view?usp=drive_link">
+                    <Link href="https://drive.google.com/file/d/17ghg02H8_Zll7jixE58mfkoNQwKsD32T/view?usp=sharing">
                       <button className="relative inline-flex items-end justify-end px-4 py-3 md:px-9 md:py-5 font-bold text-white rounded-md shadow-2xl bg-gradient-to-r from-sky-500 via-blue-500 to-[#06b6d4] bg-300% animate-gradient">
                         <span className="absolute top-0 left-0 w-full bg-gradient-to-b from-white to-transparent opacity-5 h-1/3"></span>
                         <span className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-white to-transparent opacity-5"></span>

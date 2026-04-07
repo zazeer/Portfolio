@@ -6,7 +6,7 @@ function Skills() {
             {/* Text */}
             <div className="md:w-1/2 w-full z-20 flex flex-col justify-center px-6 sm:px-12 md:pl-20 pt-24 md:pt-0 items-center md:items-start text-center md:text-left">
                 <h1 className="md:text-6xl text-4xl sm:text-5xl mb-4 sm:mb-6 font-bold bg-gradient-to-r from-fuchsia-400 via-purple-500 to-indigo-500 text-transparent bg-clip-text bg-300% animate-gradient">What I do</h1>
-                <p className="md:text-xl text-base sm:text-lg text-gray-300 mb-8 sm:mb-10 w-full leading-relaxed">
+                <p className="md:text-xl text-base sm:text-lg text-white mb-8 sm:mb-10 w-full leading-relaxed">
                     I build full-stack web applications and work across both frontend and backend to create practical and scalable systems. I’m also interested in exploring different areas of software development.
                     <br/><br/>In addition, I work with AI systems such as retrieval-augmented generation (RAG), combining large language models and vector databases to develop more intelligent applications.
                 </p>
@@ -21,7 +21,7 @@ function Skills() {
                         "Vector Search",
                         "Database Design"
                     ].map((skill, index) => (
-                        <li key={index} className="flex items-center text-gray-300 md:text-xl text-sm sm:text-base leading-snug">
+                        <li key={index} className="flex items-center text-white md:text-xl text-sm sm:text-base leading-snug">
                             {/* Animated Abstract Bullet */}
                             <div className="relative w-6 h-6 sm:w-8 sm:h-8 mr-3 sm:mr-4 flex-shrink-0 flex items-center justify-center">
                                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.9)]"></div>
