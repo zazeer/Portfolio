@@ -47,7 +47,7 @@ export default function Home() {
                 <h2 className="md:text-8xl text-2xl mt-2 pb-6 font-bold bg-gradient-to-r from-violet-700 via-purple-400 to-fuchsia-300 text-transparent bg-clip-text bg-300% animate-gradient">
                   <Typewriter
                     options={{
-                      strings: ["AI Engineer", "Application Developer"],
+                      strings: ["Application Developer"],
                       autoStart: true,
                       loop: true,
                     }}
